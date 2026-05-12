@@ -1,0 +1,110 @@
+name: "Adding more personas and roles to the project management processes"
+description: "Request to add five new personas/roles to expand clarity and accountability in project management processes."
+title: "[Process Doc Update]: Adding more personas and roles to the project management processes"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update?"
+      description: "This request focuses on expanding octoacme-roles-and-personas.md with five new persona definitions."
+      options:
+        - octoacme-roles-and-personas.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      description: "We need to add five critical roles that are referenced throughout the process docs but lack formal definitions."
+      placeholder: "The five new personas are: QA/Testing Specialist, Stakeholder/Sponsor, Security Lead/Officer, Release Manager/DevOps Engineer, and Technical Lead/Architect"
+      value: |
+        ## Proposed New Personas to Add:
+
+        1. **QA/Testing Specialist** - Ensures quality standards and acceptance criteria are met
+           - Referenced in: octoacme-execution-and-tracking.md, octoacme-project-planning.md
+           
+        2. **Stakeholder/Sponsor** - Represents business interests and provides strategic direction
+           - Referenced in: octoacme-project-initiation.md, octoacme-risks-and-communication.md
+           
+        3. **Security Lead/Officer** - Ensures security and compliance standards
+           - Referenced in: octoacme-execution-and-tracking.md, octoacme-risks-and-communication.md
+           
+        4. **Release Manager/DevOps Engineer** - Orchestrates deployment and infrastructure
+           - Referenced in: octoacme-release-and-deployment.md
+           
+        5. **Technical Lead/Architect** - Provides technical guidance and design decisions
+           - Referenced in: octoacme-project-planning.md, octoacme-execution-and-tracking.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      description: "Explain the gaps this addresses and benefits of the expansion."
+      value: |
+        ## Current Gaps:
+        - Several critical roles are mentioned across process docs but lack formal definitions
+        - New team members may be unclear about who owns certain activities
+        - Cross-functional accountability is ambiguous
+        - Onboarding time increases when roles aren't clearly articulated
+
+        ## Benefits:
+        - **Improved Clarity**: Clear role descriptions reduce confusion and rework
+        - **Better Accountability**: Explicitly defined responsibilities improve ownership
+        - **Faster Onboarding**: New team members understand the full organizational structure
+        - **Enhanced Collaboration**: Clear interaction patterns reduce coordination overhead
+        - **Consistency**: Standardized role definitions ensure consistent processes across projects
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content (optional)"
+      description: "Draft content for each persona with responsibilities, goals, and interactions."
+      value: |
+        ## For each persona, include:
+
+        ### QA/Testing Specialist
+        - **Role Summary**: Quality assurance and test execution across the project lifecycle
+        - **Responsibilities**: Test planning, automation, UAT coordination, quality reporting, pre-deployment verification
+        - **Goals**: High-quality releases, reduced production defects, fast confident delivery
+        - **Interactions**: Works with Developers (test requirements), Product Manager (quality standards), Project Manager (status), Release Manager (pre-flight testing), Security Lead (security testing)
+
+        ### Stakeholder/Sponsor
+        - **Role Summary**: Represents business interests and provides strategic direction
+        - **Responsibilities**: Project approvals, business alignment, priority setting, resource allocation, escalation
+        - **Goals**: Maximize ROI, reduce scope creep, ensure business alignment
+        - **Interactions**: Receives status from PM, aligns with Product Manager on metrics and priorities
+
+        ### Security Lead/Officer
+        - **Role Summary**: Ensures security and compliance standards are met
+        - **Responsibilities**: Security scanning, threat review, incident response, compliance tracking
+        - **Goals**: Prevent breaches, maintain compliance, reduce security incidents
+        - **Interactions**: Code reviews with Developers, design reviews with Technical Lead, pre-deployment verification with Release Manager
+
+        ### Release Manager/DevOps Engineer
+        - **Role Summary**: Orchestrates deployment and ensures reliable releases
+        - **Responsibilities**: Deployment automation, infrastructure management, rollback procedures, deployment verification
+        - **Goals**: Fast reliable releases, minimal downtime, operational visibility
+        - **Interactions**: Coordinates with Developers (deployable artifacts), QA (pre-flight tests), Security (deployment security)
+
+        ### Technical Lead/Architect
+        - **Role Summary**: Provides technical guidance and strategic design decisions
+        - **Responsibilities**: Design reviews, architecture guidance, technical risk mitigation, mentoring, feasibility assessment
+        - **Goals**: Scalable systems, reduced technical debt, team growth
+        - **Interactions**: Mentors Developers, reviews designs with Product Manager, identifies risks with Project Manager
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Check all that apply:"
+      options:
+        - label: "Content aligns with existing process docs (all five personas are referenced in current docs)"
+          required: true
+        - label: "Update improves clarity or closes a documented gap (fills in missing role definitions)"
+          required: true
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
+          required: true
